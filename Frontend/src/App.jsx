@@ -7,6 +7,7 @@ import Home from './pages/home';
 // import Dashboard from './Components/Dashboard';
 // import Profile from './Components/Profile';
 import Layout from './Layout';
+import About from './Components/About';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         {/* All other routes use Layout with Navbar */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path='/about' element={<About/>}/>
           {/* <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} /> */}
           {/* Add more protected or general routes here */}
