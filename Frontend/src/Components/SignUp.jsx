@@ -4,20 +4,19 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       if (email || pass) {
-//         console.log(email, pass);
-//       }
-//     }, 3000);
-//     return () => clearInterval(interval);
-//   }, [email, pass]);
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       if (email || pass) {
+  //         console.log(email, pass);
+  //       }
+  //     }, 3000);
+  //     return () => clearInterval(interval);
+  //   }, [email, pass]);
 
   const handleClick = () => {
-
-    console.log(email,pass);
-    setEmail("")
-    setPass("")
+    console.log(email, pass);
+    setEmail("");
+    setPass("");
   };
 
   return (
