@@ -4,6 +4,8 @@ import heroImg from "../../public/sexy-anime-background.jpg"; // Make sure this 
 import Herosection from "../Components/Herosection";
 import RegUpdate from "../Components/RegUpdate";
 import Footer from "../Components/Footer";
+import Discover from "../Components/Discover";
+import Section from "../Components/Section";
 
 
 
@@ -47,6 +49,8 @@ const Home = () => {
       </section> */}
       <Herosection/>
       <RegUpdate/>
+      <Discover/>
+      <Section/>
      
 
 
