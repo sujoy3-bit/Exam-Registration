@@ -6,47 +6,52 @@ const Section = () => {
 
 
 
+      <div className="flex flex-col space-y-6">
+        {/* Section 1 */}
 
-      {/* Section 1 */}
-      <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="w-full md:w-1/2">
-          <div className="bg-gray-300  w-full h-auto rounded-lg flex items-center justify-center overflow-hidden">
-            <img className="h-64 w-full rounded-lg" src="biryani.jpg" alt="" />
+
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="w-full md:w-1/2">
+            <div className="bg-gray-300  w-full h-auto rounded-lg flex items-center justify-center overflow-hidden">
+              <img className="h-[20rem] w-full rounded-lg" src="biryani.jpg" alt="" />
+            </div>
+          </div>
+          <div className="w-full md:w-1/2">
+            <h2 className="text-2xl font-bold mb-4">
+              Experience Effortless Exam Registration with Our User-Friendly
+              Platform
+            </h2>
+            <p className="text-gray-600">
+              Our website simplifies the registration process, allowing students
+              to easily sign up for their semester papers. With accurate
+              information at their fingertips, students save valuable time and
+              avoid confusion.
+            </p>
           </div>
         </div>
-        <div className="w-full md:w-1/2">
-          <h2 className="text-2xl font-bold mb-4">
-            Experience Effortless Exam Registration with Our User-Friendly
-            Platform
-          </h2>
-          <p className="text-gray-600">
-            Our website simplifies the registration process, allowing students
-            to easily sign up for their semester papers. With accurate
-            information at their fingertips, students save valuable time and
-            avoid confusion.
-          </p>
-        </div>
-      </div>
 
-      {/* Section 2 */}
-      <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="w-full md:w-1/2 order-2 md:order-1">
-          <h2 className="text-2xl font-bold mb-4">
-            Empowering Students Through Seamless Exam Registration
-          </h2>
-          <p className="text-gray-600">
-            Our college department is dedicated to enhancing the academic
-            experience by simplifying the exam registration process. We strive
-            to provide students with a user-friendly platform that ensures they
-            can easily manage their semester papers.
-          </p>
-        </div>
-        <div className="w-full md:w-1/2 order-1 md:order-2">
-          <div className="bg-gray-300  w-full h-auto rounded-lg flex items-center justify-center overflow-hidden">
-            <img className="h-64 w-full rounded-lg" src="biryani.jpg" alt="" />
+        {/* Section 2 */}
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+            <h2 className="text-2xl font-bold mb-4">
+              Empowering Students Through Seamless Exam Registration
+            </h2>
+            <p className="text-gray-600">
+              Our college department is dedicated to enhancing the academic
+              experience by simplifying the exam registration process. We strive
+              to provide students with a user-friendly platform that ensures they
+              can easily manage their semester papers.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <div className="bg-gray-300  w-full h-auto rounded-lg flex items-center justify-center overflow-hidden">
+              <img className="h-[20rem] w-full rounded-lg pt-" src="biryani.jpg" alt="" />
+            </div>
           </div>
         </div>
+
       </div>
+
 
 
 
