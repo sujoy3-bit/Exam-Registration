@@ -36,7 +36,6 @@ const StudentSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    default: () => `REG-${Math.floor(100000 + Math.random() * 900000)}`
   },
   password: {
     type: String,

@@ -1,22 +1,27 @@
 const Student = require('../models/Student');
 const bcrypt = require('bcryptjs');
+const {SendSignupcompleteEmail}  = require('../EmailSetup/Email');
+
+
 
 const Signup = async (req, res) => {
   const { firstname, lastname, phonenumber, email, DOB, department, password } = req.body;
 
- 
   if (!firstname || !lastname || !phonenumber || !email || !DOB || !department || !password) {
     return res.status(400).json({ message: "All fields are required" });
   }
 
   try {
-
     const existingStudent = await Student.findOne({ email });
     if (existingStudent) {
       return res.status(409).json({ message: "Email already registered" });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    
+    // Generate Registration Number (custom logic or let Mongo handle)
+    const registrationNumber = `REG-${Date.now().toString().slice(-6)}`;
+
     const newStudent = new Student({
       firstname,
       lastname,
@@ -24,18 +29,27 @@ const Signup = async (req, res) => {
       email,
       DOB,
       department,
+      registrationNumber,
       password: hashedPassword,
     });
 
     await newStudent.save();
-    console.log(newStudent);
+
+  
+    await SendSignupcompleteEmail(
+      email,
+      firstname,
+      lastname,
+      registrationNumber,
+      password 
+    );
 
     res.status(201).json({
-      message: "Student registered successfully",
+      message: "Student registered successfully. Login credentials have been sent to email.",
       student: {
         id: newStudent._id,
-        registrationNumber: newStudent.registrationNumber,
-        email: newStudent.email
+        registrationNumber,
+        email
       }
     });
   } catch (error) {
