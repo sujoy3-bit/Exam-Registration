@@ -1,6 +1,7 @@
 const Student = require('../models/Student');
 const bcrypt = require('bcryptjs');
 const {SendSignupcompleteEmail}  = require('../EmailSetup/Email');
+const generateRegNumber = require('../utils/generateRegNumber')
 
 
 
@@ -16,12 +17,8 @@ const Signup = async (req, res) => {
     if (existingStudent) {
       return res.status(409).json({ message: "Email already registered" });
     }
-
     const hashedPassword = await bcrypt.hash(password, 10);
-    
-    // Generate Registration Number (custom logic or let Mongo handle)
-    const registrationNumber = `REG-${Date.now().toString().slice(-6)}`;
-
+    const registrationNumber = await generateRegNumber();
     const newStudent = new Student({
       firstname,
       lastname,
@@ -32,10 +29,7 @@ const Signup = async (req, res) => {
       registrationNumber,
       password: hashedPassword,
     });
-
     await newStudent.save();
-
-  
     await SendSignupcompleteEmail(
       email,
       firstname,
